@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Arrange-Act-Assert</Title>
+			<Author>André Cantarim</Author>
+			<Description>Adiciona comentários padronizados para divisão de seções Arrange, Act e Assert em classes de testes unitários</Description>
+			<Shortcut>aaa</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[// Arrange
+	$arrange$
+	
+	// Act
+	$act$
+	
+	// Assert
+	$assert$]]>
+            </Code>
+			<Declarations>
+				<Literal>
+				  <ID>arrange</ID>
+				  <ToolTip>Preparativos para a ação e resultado a serem testados. Exemplo: Inicializações, alterações de estado e definições de Mocks.</ToolTip>
+				  <Default>var resultado = null;</Default>
+				</Literal>
+				<Literal>
+				  <ID>act</ID>
+				  <ToolTip>Ação a ser realizada, além de obtenção opcional do resultado.</ToolTip>
+				  <Default>resultado = classe.InicializarResultado();</Default>
+				</Literal>
+				<Literal>
+				  <ID>assert</ID>
+				  <ToolTip>Verificações e comparações por igualdades de valores obtidos e esperados.</ToolTip>
+				  <Default>Assert.NotNull(resultado);</Default>
+				</Literal>
+			  </Declarations>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

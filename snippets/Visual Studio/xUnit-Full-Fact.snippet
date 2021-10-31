@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>xUnit Full Fact</Title>
+			<Author>André Cantarim</Author>
+			<Description>Adiciona um método de teste padronizado para uso com xUnit</Description>
+			<Shortcut>xfact</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[[Fact(DisplayName = "$DisplayName$")]
+        public async void $Given$_$When$_$Then$()
+        {
+            // Arrange
+            $arrange$
+
+            // Act
+			$act$
+
+            // Assert
+			$assert$}]]>
+            </Code>
+			<Declarations>
+				<Literal>
+				  <ID>DisplayName</ID>
+				  <ToolTip>Descrição clara do teste unitário (cenário, condição e retorno esperado).</ToolTip>
+				  <Default>Descreva o cenário, condição e retorno esperado para o teste unitário</Default>
+				</Literal>
+				<Literal>
+				  <ID>Given</ID>
+				  <ToolTip>Item que de fato está sendo validado (dado que...).</ToolTip>
+				  <Default>Given</Default>
+				</Literal>
+				<Literal>
+				  <ID>When</ID>
+				  <ToolTip>Condição para considerar na execução do item validado (quando...)</ToolTip>
+				  <Default>When</Default>
+				</Literal>
+				<Literal>
+				  <ID>Then</ID>
+				  <ToolTip>Retorno esperado após a execução do item validado (então...)</ToolTip>
+				  <Default>Then</Default>
+				</Literal>
+				<Literal>
+				  <ID>arrange</ID>
+				  <ToolTip>Preparativos para a ação e resultado a serem testados. Exemplo: Inicializações, alterações de estado e definições de Mocks.</ToolTip>
+				  <Default>var resultado = null;</Default>
+				</Literal>
+				<Literal>
+				  <ID>act</ID>
+				  <ToolTip>Ação a ser realizada, além de obtenção opcional do resultado.</ToolTip>
+				  <Default>resultado = classe.InicializarResultado();</Default>
+				</Literal>
+				<Literal>
+				  <ID>assert</ID>
+				  <ToolTip>Verificações e comparações por igualdades de valores obtidos e esperados.</ToolTip>
+				  <Default>Assert.NotNull(resultado);</Default>
+				</Literal>
+			  </Declarations>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
